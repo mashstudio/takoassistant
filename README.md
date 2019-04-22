@@ -29,20 +29,20 @@ This app finds and ranks the best places to fly a kite from a previously registe
 
 - Roles of Services and Components
 
---Action on Google
+    - Action on Google
 Handles the definitions and operation verification through simulators for the Tako Assistant app.
 
---Dialogflow
+    - Dialogflow
 Handles the definitions and language analysis for the flow of the dialog.
 
---Firebase (Fulfillment)
+    - Firebase (Fulfillment)
 Requests the Server for language analysis results from Dialogflow and other necessary information, then structures the speech.
 Please note that in scenarios where Firebase requests data from external servers, including this scenario, a paid Firebase subscription plan is required.
 
---Server (WebServer)
+    - Server (WebServer)
 Manages kite-flying spots, collects weather information (wind information), and returns kite-flying spot results based on the request from Firebase.
 
---DarkSky.net
+    - DarkSky.net
 Weather information service (https://darksky.net)
 Includes an API allowing weather information to be obtained from coordinates (latitude and longitude).
 Up to 1,000 requests per day can be made free of charge, including for commercial purposes.
@@ -76,6 +76,7 @@ sql/PostgreSQL/insert_location.sql
 Table contents
 
 location_table
+
 ![image_location_table](https://github.com/mashstudio/takoassistant/blob/image/images/image_location_table.png)
 
 - pkey
@@ -103,6 +104,7 @@ Flag for deletion
 
 
 weather_table
+
 ![image_weather_table](https://github.com/mashstudio/takoassistant/blob/image/images/image_weather_table.png)
 
 - pkey
@@ -125,7 +127,7 @@ Wind direction
 Wind direction to be articulated by Google Home
 
 
-
+---
 2. Server Script Installation
 2-1. PHP Setup
 
@@ -151,19 +153,19 @@ Kite Configuration
 
 Open /takoassistant/incs/config.inc.php in an editor and run the following configurations:
 
----
+```
 define("DB_HOST", "<DB_ADDRESS>");  
 define("DB_PORT", "<DB_PORT>");  
 define("DB_USER_NAME", "<DB_USER_NAME>");  
 define("DB_PWD", "<DB_PASSWORD>");  
 define(“DB_NAME”,”<DB_NAME>”);  
-
+```
 Change the values of <DB_ADDRESS> <DB_PORT> <DB_USER_NAME> <DB_PASSWORD> <DB_NAME> according to the settings of the database being used.
 
----
+```
 define("HOME_LATITUDE","34.822602");  
 define("HOME_LONGITUDE","137.396672");  
-
+```
 Set the values of HOME_LATITUDE and HOME_LONGITUDE to the base location coordinates (latitude and longitude).
 The initial values are set for Toyokawa Station, Japan.
 This app ignores the smart speaker installation coordinates data, and uses fixed values.
@@ -192,7 +194,7 @@ http://<YOUR_SERVER_URL>/takoassistant/search.php?mode=score
 
 If information is displayed for all registered locations, setup is complete.
 
-
+---
 3. Action on Google Setup
 
 ![image_components_aog](https://github.com/mashstudio/takoassistant/blob/image/images/image_components_aog.png)
@@ -241,7 +243,7 @@ Select "ADD YOUR FIRST ACTION"
 
 Select "Custom intent," then "BUILD"
 
-
+---
 4. Dialogflow Setup
 
 ![image_components_dialogflow](https://github.com/mashstudio/takoassistant/blob/image/images/image_components_dialogflow.png)
@@ -445,7 +447,7 @@ You may choose either a fixed price or pay-as-you-go price plan. In the example 
 Open the source code fulfillment/dialogflow/index.js in a text editor, the copy and paste the code into the inline editor on the Fulfillment page.
 Also copy and paste the code into package.json.
 
-
+---
 5. Confirming Operation
 
 After basic setup has been completed, confirm that the app operates properly.
