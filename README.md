@@ -152,17 +152,17 @@ Kite Configuration
 Open /takoassistant/incs/config.inc.php in an editor and run the following configurations:
 
 ---
-define("DB_HOST", "<DB_ADDRESS>");
-define("DB_PORT", "<DB_PORT>");
-define("DB_USER_NAME", "<DB_USER_NAME>");
-define("DB_PWD", "<DB_PASSWORD>");
-define(“DB_NAME”,”<DB_NAME>”);
+define("DB_HOST", "<DB_ADDRESS>");  
+define("DB_PORT", "<DB_PORT>");  
+define("DB_USER_NAME", "<DB_USER_NAME>");  
+define("DB_PWD", "<DB_PASSWORD>");  
+define(“DB_NAME”,”<DB_NAME>”);  
 
 Change the values of <DB_ADDRESS> <DB_PORT> <DB_USER_NAME> <DB_PASSWORD> <DB_NAME> according to the settings of the database being used.
 
 ---
-define("HOME_LATITUDE","34.822602");
-define("HOME_LONGITUDE","137.396672");
+define("HOME_LATITUDE","34.822602");  
+define("HOME_LONGITUDE","137.396672");  
 
 Set the values of HOME_LATITUDE and HOME_LONGITUDE to the base location coordinates (latitude and longitude).
 The initial values are set for Toyokawa Station, Japan.
@@ -233,7 +233,6 @@ Finally, click on the "SAVE" button to save the settings.
 Select "Add Action(s)" under "Build your Action"
 
 
-[image_aog_add_actions];
 ![image_aog_add_actions](https://github.com/mashstudio/takoassistant/blob/image/images/image_aog_add_actions.png)
 
 Select "ADD YOUR FIRST ACTION"
@@ -452,7 +451,6 @@ Also copy and paste the code into package.json.
 After basic setup has been completed, confirm that the app operates properly.
 Confirm using the Simulator.
 
-[image_aog_simulator]
 ![image_aog_simulator](https://github.com/mashstudio/takoassistant/blob/image/images/image_aog_simulator.png)
 
 
